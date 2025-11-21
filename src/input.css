@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@theme {
+  /* ton token couleur personnalisé */
+  --color-yellow: #FFD15B;
+  --color-grey: #7A7A7A;
+}
+/**********search***************/
+
+
+/* Bouton chevrons piloté par aria-expanded */
+
+/* État fermé : chevron bas visible, chevron haut caché */
+.fingredient__header-btn[aria-expanded="false"] .fa-chevron-down,
+.fappareil__header-btn[aria-expanded="false"] .fa-chevron-down,
+.fustensile__header-btn[aria-expanded="false"] .fa-chevron-down {
+  opacity: 1;
+}
+
+.fingredient__header-btn[aria-expanded="false"] .fa-chevron-up,
+.fappareil__header-btn[aria-expanded="false"] .fa-chevron-up,
+.fustensile__header-btn[aria-expanded="false"] .fa-chevron-up {
+  opacity: 0;
+}
+
+/* État ouvert : chevron bas caché, chevron haut visible */
+.fingredient__header-btn[aria-expanded="true"] .fa-chevron-down,
+.fappareil__header-btn[aria-expanded="true"] .fa-chevron-down,
+.fustensile__header-btn[aria-expanded="true"] .fa-chevron-down {
+  opacity: 0;
+}
+
+.fingredient__header-btn[aria-expanded="true"] .fa-chevron-up,
+.fappareil__header-btn[aria-expanded="true"] .fa-chevron-up, 
+.fustensile__header-btn[aria-expanded="true"] .fa-chevron-up {
+  opacity: 1;
+}
+
+/* Gestion des arrondis pour les filtres des ingrédients*/
+.fingredient:has(.fingredient__header-btn[aria-expanded="true"]) {
+    border-radius: 11px 11px 0 0;
+}
+
+.fingredient:has(.fingredient__header-btn[aria-expanded="true"]) .fingredient__choix {
+    border-radius: 0 0 11px 11px;
+}
+
+/* Gestion des arrondis pour les filtres des appareils*/
+.fappareil:has(.fappareil__header-btn[aria-expanded="true"]) {
+    border-radius: 11px 11px 0 0;
+}
+
+.fappareil:has(.fappareil__header-btn[aria-expanded="true"]) .fappareil__choix {
+    border-radius: 0 0 11px 11px;
+}
+
+/* Gestion des arrondis pour les filtres des appareils*/
+.fustensile:has(.fustensile__header-btn[aria-expanded="true"]) {
+    border-radius: 11px 11px 0 0;
+}
+
+.fustensile:has(.fustensile__header-btn[aria-expanded="true"]) .fustensile__choix {
+    border-radius: 0 0 11px 11px;
+}
+
+
+/* affichage message d'erreur */
+
+.formData[data-error]::after {
+  content: attr(data-error);
+  position: absolute;
+  font-size: 19px;
+  font-weight: bold;
+  color:#FFD15B;
+  left : 0px;
+  bottom : -70px;
+  opacity: 0;
+  transition: 0.3s;
+}
+.formData[data-error-visible="true"]::after {
+  opacity: 1;
+}
+
+/* Pour la section de recherche et l'acessibilité */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  border: 0;
+}

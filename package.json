@@ -1,0 +1,24 @@
+{
+  "name": "petitsplats2.0",
+  "version": "1.0.0",
+  "description": "P7 JS 2.0 Les petits plats",
+  "main": "recipes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "npx @tailwindcss/cli -i ./src/input.css -o ./css/styles.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OpenClassrooms-Student-Center/PetitsPlats2.0.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/OpenClassrooms-Student-Center/PetitsPlats2.0/issues"
+  },
+  "homepage": "https://github.com/OpenClassrooms-Student-Center/PetitsPlats2.0#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.1.17"
+  }
+}

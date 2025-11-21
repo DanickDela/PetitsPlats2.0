@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="fr" class="bg-white">
+    <head>
+        <link href="./css/styles.css" rel="stylesheet">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/png" href="assets/favicon.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mynerve&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shrikhand&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+       <title>Petits plats 2.0</title>
+    </head>
+    <body class="w-[1440px] bg-white mx-auto  m-0 p-0">
+        <header class="pp-header flex flex-col w-full h-[667px] bg-[url('../assets/lampos-aritonang.png')] bg-cover bg-center">
+
+            <img class="pp-header__logo ml-[69px] mt-[51px] w-[207px] h-[25.26px]" src="./assets/Logo.svg" alt="Logo Petits Plats" >
+
+            <div class="pp-header__content flex flex-col items-center gap-[29.42px] mt-[168.74px]">
+                <h1 class="pp-header__title font-[Anton] text-[44px] font-normal m-0 p-0 text-yellow text-center">CHERCHEZ PARMI PLUS DE 1500 RECETTES<br> DU QUOTIDIEN, SIMPLES ET DÉLICIEUSES</h1>
+              
+                <form class="pp-search formData flex flex-row items-center w-[893px] h-[72px] bg-white rounded-l-[11px] right-[30px] relative" role="search">
+             
+                    <input 
+                        class="pp-search__input flex-1 h-full  px-[35px]
+                            placeholder:font-[Manrope] text-grey placeholder:text-[16px] placeholder:font-normal
+                            focus:outline-none"
+                        autocomplete="off"
+                        type="search" 
+                        id="searchform" 
+                        name="searchform"
+                        placeholder="Rechercher une recette, un ingrédient, ..."
+                        
+                    >
+                
+                    <!-- Conteneur bouton + fond -->
+                    <div class="absolute top-0 -right-[61px] h-full flex items-center">
+                
+                        <div class="h-full w-[62px] bg-white rounded-r-[11px]"></div>
+
+                        <button class="pp-search__button absolute top-2.5 left-0 w-[51px] h-[52px] rounded-[10px] bg-black 
+                            flex items-center justify-center hover:bg-yellow transition-colors duration-300 ease-in-out group"
+                            type="submit" 
+                            id="btn-search"
+                            >
+                            <svg 
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="28" height="28" stroke="white" stroke-width="1"
+                            class="w-[27px] h-7 transition-colors duration-300 group-hover:stroke-black"
+                            viewBox="0 0 28 28" fill="none" >
+                            <circle cx="10" cy="10" r="9.5"/>
+                            <line x1="18.3536" y1="18.6464" x2="27.3536" y2="27.6464"/>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <div class="formeData"></div>
+            </div>
+
+        </header>
+
+
+   <main id="main" class="main_content bg-[#EDEDED] overscroll-auto" >
+
+        <!-- Filtres ingrédients, appareils et ustensiles -->
+        <section class="filters flex flex-row gap-[66px] ml-[104px] pt-[21px] relative">
+            <h2 class="sr-only">Filtres de recherche</h2>
+        
+            <div class="filters__recettes absolute top-[18px] right-[102px]">
+                <p class="filters__recettes-nb font-[Anton] text-black font-normal text-[21px] ">1500 recettes</p>
+            </div>
+
+            <!-- Ingrédients -->
+            <div class="fingredient flex flex-col w-[195px] h-14 gap-[13px] bg-white rounded-[11px] relative">
+                <!-- Header de la combobox -->
+                <div class="fingredient__header flex flex-row gap-[63px]  rounded-[11px] pl-4 pt-[17px] mb-[21px]">
+                    <label  class="fingredient__header-title font-[Manrope] text-[16px] font-normal text-black " 
+                            for="inputingredient">Ingrédients</label>
+                    <button class="fingredient__header-btn w-[13px] h-full flex items-center justify-center bg-white relative" 
+                        id="IngdropdownBtn" aria-label="Déplier le menu de tri" aria-expanded="false">
+                        <i class="fa-solid fa-chevron-down absolute text-black"></i>
+                        <i class="fa-solid fa-chevron-up  absolute text-black opacity-0"></i>
+                    </button>
+                </div>
+                <!-- Ccontenu de la combobox -->
+                <div class="fingredient__choix absolute top-[53px] left-0 z-50 bg-white w-[195px] rounded-[11px]">
+                    <div class="fingredient__choix-search hidden flex-row items-center relative ml-4 -mt-[3px] z-10">
+                        <input class="fingredient__choix-input w-[137px] h-9 rounded-l-xs border-t border-b border-l border-[#C6C6C6] 
+                                placeholder:font-[Manrope] text-grey placeholder:text-[16px] pl-[9px] focus:outline-none"
+                                placeholder="I"
+                                id="inputingredient"
+                                name="inputingredient"
+                                autocomplete="off"
+                                type="search">
+                        <!-- Arret del'input avant le bouton recherche et mise en place -->
+                        <div class="absolute top-0 right-4 h-full flex items-center">
+                            <div class="h-full w-[27px] bg-white rounded-r-xs border-t border-b border-r border-[#C6C6C6]"></div>
+                            <button class="absolute top-[11px] right-[9px] flex items-center justify-center" >
+                                <svg 
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="28" height="28" stroke="#000000" stroke-width="0.5"
+                                    class="w-[13.5px] h-3.5"
+                                    viewBox="0 0 28 28" fill="none" >
+                                    <circle cx="10" cy="10" r="9.5"/>
+                                    <line x1="18.3536" y1="18.6464" x2="27.3536" y2="27.6464"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="fingredient__choix-list">
+                        <ul class="fingredient__items hidden flex-col mt-[13px] h-[202px] font-[Manrope] font-normal text-[14px] text-black overflow-y-auto"
+                                    role="listbox" >
+                        </ul>
+                    </div>
+        
+                </div>
+
+            </div>
+            
+
+            <!-- appareils -->
+            <div class="fappareil flex flex-col w-[179px] h-14 gap-[13px] bg-white rounded-[11px] relative ">
+                <!-- HEADER DU DROPDOWN -->
+                <div class="fappareil__header flex flex-row gap-[63px]  rounded-[11px] pl-4 pt-[17px] mb-[21px]">
+                    <label  class="fappareil__header-title font-[Manrope] text-[16px] font-normal text-black " 
+                            for="inputappareil">Appareils</label>
+                    <button class="fappareil__header-btn w-[13px] h-full flex items-center justify-center bg-white relative" 
+                        id="AppdropdownBtn" aria-label="Déplier le menu de tri" aria-expanded="false">
+                        <i class="fa-solid fa-chevron-down absolute text-black"></i>
+                        <i class="fa-solid fa-chevron-up  absolute text-black opacity-0"></i>
+                    </button>
+                </div>
+
+                <!-- CONTENU DU DROPDOWN -->
+                <div class="fappareil__choix absolute top-[53px] left-0 z-50 bg-white w-[179px] rounded-[11px]">
+                    <div class="fappareil__choix-search hidden flex-row items-center relative ml-4 -mt-[3px] z-10">
+                        <input class="fappareil__choix-input w-[121px] h-9 rounded-l-xs border-t border-b border-l border-[#C6C6C6] 
+                                placeholder:font-[Manrope] text-grey placeholder:text-[16px] pl-[9px] focus:outline-none"
+                                placeholder="I"
+                                id="inputappareil"
+                                name="inputappareil"
+                                autocomplete="off"
+                                type="search">
+                        <!-- Arret del'input avant le bouton recherche et mise en place -->
+                        <div class="absolute top-0 right-4 h-full flex items-center">
+                            <div class="h-full w-[27px] bg-white rounded-r-xs border-t border-b border-r border-[#C6C6C6]"></div>
+                            <button class="absolute top-[11px] right-[9px] flex items-center justify-center" >
+                                <svg 
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="28" height="28" stroke="#000000" stroke-width="0.5"
+                                    class="w-[13.5px] h-3.5"
+                                    viewBox="0 0 28 28" fill="none" >
+                                    <circle cx="10" cy="10" r="9.5"/>
+                                    <line x1="18.3536" y1="18.6464" x2="27.3536" y2="27.6464"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="fappareil__choix-list">
+                        <ul class="fappareil__items hidden flex-col mt-[13px] h-[202px] font-[Manrope] font-normal text-[14px]
+                                 text-black overflow-y-auto" 
+                            role="listbox">
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- ustensiles -->
+            <div class="fustensile flex flex-col w-[188px] h-14 gap-[13px] bg-white rounded-[11px] relative ">
+                <!-- HEADER DU DROPDOWN -->
+                <div class="fustensile__header flex flex-row gap-[63px]  rounded-[11px] pl-4 pt-[17px] mb-[21px]">
+                    <label  class="fustensile__header-title font-[Manrope] text-[16px] font-normal text-black " 
+                            for="inputustensile">Ustensiles</label>
+                    <button class="fustensile__header-btn w-[13px] h-full flex items-center justify-center bg-white relative" 
+                        id="UstdropdownBtn" aria-label="Déplier le menu de tri" aria-expanded="false">
+                        <i class="fa-solid fa-chevron-down absolute text-black"></i>
+                        <i class="fa-solid fa-chevron-up  absolute text-black opacity-0"></i>
+                    </button>
+                </div>
+
+                <!-- CONTENU DU DROPDOWN -->
+                <div class="fustensile__choix absolute top-[53px] left-0 z-50 bg-white w-[188px] rounded-[11px]">
+                    <div class="fustensile__choix-search hidden flex-row items-center relative ml-4 -mt-[3px] z-10">
+                        <input class="fustensile__choix-input w-[130px] h-9 rounded-l-xs border-t border-b border-l border-[#C6C6C6] 
+                                placeholder:font-[Manrope] text-grey placeholder:text-[16px] pl-[9px] focus:outline-none"
+                                placeholder="I"
+                                id="inputustensile"
+                                name="inputustensile"
+                                autocomplete="off"
+                                type="search">
+                        <!-- Arret del'input avant le bouton recherche et mise en place -->
+                        <div class="absolute top-0 right-4 h-full flex items-center">
+                            <div class="h-full w-[27px] bg-white rounded-r-xs border-t border-b border-r border-[#C6C6C6]"></div>
+                            <button class="absolute top-[11px] right-[9px] flex items-center justify-center" >
+                                <svg 
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="28" height="28" stroke="#000000" stroke-width="0.5"
+                                    class="w-[13.5px] h-3.5"
+                                    viewBox="0 0 28 28" fill="none" >
+                                    <circle cx="10" cy="10" r="9.5"/>
+                                    <line x1="18.3536" y1="18.6464" x2="27.3536" y2="27.6464"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="fustensile__choix-list">
+                        <ul class="fustensile__items hidden flex-col mt-[13px] h-[202px] font-[Manrope] font-normal text-[14px]
+                                 text-black overflow-y-auto" 
+                            role="listbox">
+                        </ul>
+                    </div>
+                </div>
+            </div>           
+        </section>
+
+
+        <!-- Afficahe de toutes les recettes -->
+        <section class="recipes_list grid grid-cols-3 gap-x-12 gap-y-[60px] mt-[55px] mr-[102px] pb-[201px] ml-[102px] z-0">
+            <h2 class="sr-only">Liste des recettes</h2>
+        </section>
+      
+   </main>
+    <script type="module" src="./script/pages/index.js"></script>
+  </body>
+</html>
