@@ -178,15 +178,42 @@ export function searchUstensiles(recipes, ustensilesTags) {
  */
 export function searchRecipes(index, inputtext) {
     const norminputtext = normaliseText(inputtext);
-    
+
+    // Si moins de 3 caractères → retourner toutes les recettes
     if (norminputtext.length < 3) {
-        // Retourne toutes les recettes
-        return index.map((entry) => entry.recipe);
+        const allRecipes = [];
+        for (let i = 0; i < index.length; i++) {
+            allRecipes.push(index[i].recipe);
+        }
+        return allRecipes;
     }
 
-    return index
-        .filter((entry) => entry.textRecherche.includes(norminputtext))
-        .map((entry) => entry.recipe);
+    // Filtrage bouche for
+    const result = [];
+
+    for (let i = 0; i < index.length; i++) {
+        const entry = index[i];
+
+        let j = 0;
+        let match=false;
+        while ((j < index[i].textRecherche.length) && (!match)) {
+            if (index[i].textRecherche[j] === norminputtext[0]) {
+                // vérifie si tout le mot correspond
+                let k = 0;
+                while (k < norminputtext.length && index[i].textRecherche[j + k] === norminputtext[k]) {
+                    k++;
+                }
+                if (k === norminputtext.length) {
+                    result.push(entry.recipe);
+                    match=true;
+                }
+                    
+            }
+            j++;
+        }
+    }
+
+    return result;
 }
 /**
  * Met à jour la liste des recettes affichées en appliquant :
