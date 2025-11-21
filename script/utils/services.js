@@ -194,15 +194,27 @@ export function searchRecipes(index, inputtext) {
     for (let i = 0; i < index.length; i++) {
         const entry = index[i];
 
-        if (entry.textRecherche.includes(norminputtext)) {
-            result.push(entry.recipe);
+        let j = 0;
+        let match=false;
+        while ((j < index[i].textRecherche.length) && (!match)) {
+            if (index[i].textRecherche[j] === norminputtext[0]) {
+                // vérifie si tout le mot correspond
+                let k = 0;
+                while (k < norminputtext.length && index[i].textRecherche[j + k] === norminputtext[k]) {
+                    k++;
+                }
+                if (k === norminputtext.length) {
+                    result.push(entry.recipe);
+                    match=true;
+                }
+                    
+            }
+            j++;
         }
     }
 
     return result;
 }
-
-
 /**
  * Met à jour la liste des recettes affichées en appliquant :
  *  1. La recherche principale (barre de recherche du header)
