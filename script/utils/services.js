@@ -178,16 +178,31 @@ export function searchUstensiles(recipes, ustensilesTags) {
  */
 export function searchRecipes(index, inputtext) {
     const norminputtext = normaliseText(inputtext);
-    
+
+    // Si moins de 3 caractères → retourner toutes les recettes
     if (norminputtext.length < 3) {
-        // Retourne toutes les recettes
-        return index.map((entry) => entry.recipe);
+        const allRecipes = [];
+        for (let i = 0; i < index.length; i++) {
+            allRecipes.push(index[i].recipe);
+        }
+        return allRecipes;
     }
 
-    return index
-        .filter((entry) => entry.textRecherche.includes(norminputtext))
-        .map((entry) => entry.recipe);
+    // Filtrage bouche for
+    const result = [];
+
+    for (let i = 0; i < index.length; i++) {
+        const entry = index[i];
+
+        if (entry.textRecherche.includes(norminputtext)) {
+            result.push(entry.recipe);
+        }
+    }
+
+    return result;
 }
+
+
 /**
  * Met à jour la liste des recettes affichées en appliquant :
  *  1. La recherche principale (barre de recherche du header)
