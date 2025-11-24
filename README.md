@@ -1,6 +1,6 @@
 # 🍽️ PetitsPlats 2.0 — Moteur de Recherche (JavaScript)
 
-Projet réalisé dans le cadre de la formation *Développeur javascript React OpenClassrooms*.  
+Projet réalisé dans le cadre de la formation *Développeur javascript React d'OpenClassrooms*.  
 Objectif : développer un moteur de recherche performant, sans framework, basé sur un index optimisé et des filtres dynamiques.
 
 ![Aperçu du site](./assets/Home-page.png)
@@ -51,7 +51,7 @@ Objectif : développer un moteur de recherche performant, sans framework, basé 
 
 # ✨ Hébergememnt
 
-Le site est hégergé sur [[Github Pages](url)]([url](https://danickdela.github.io/PetitsPlats2.0/))
+Le site est hégergé sur [Github Pages]([url](https://danickdela.github.io/PetitsPlats2.0/))
 
 
 # ⚙️ Installation
