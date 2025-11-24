@@ -166,18 +166,28 @@ export function DefineFilterTemplate (VuIngredients,VuAppareils,VuUstensiles) {
                             "flex",
                             "items-center",
                             "justify-center",
-                            "h-5",
-                            "w-5"
+                            "h-4",
+                            "w-4",
+                            "rounded-full",
+                            "group",
+                            "hover:bg-black"
                         );
 
-   // Ajout de l'icône dans le bouton
-    const tagBtnIcon = document.createElement("i");
-    tagBtnIcon.classList.add(
-        "fa-solid",
-        "fa-xmark",
-        "text-black",
-        "text-[10px]"
-    );
+   // Ajout de l'icône dans le bouton svg pour ptimisation des requêtes
+    const tagBtnIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    tagBtnIcon.setAttribute("viewBox", "0 0 10 10");
+    tagBtnIcon.setAttribute("fill", "none");
+    tagBtnIcon.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+    tagBtnIcon.classList.add("w-2.5", "h-2.5", "text-black","group-hover:text-white");
+
+    // Création du <path>
+    const path = document.createElementNS("http://www.w3.org/2000/svg", "path");
+    path.setAttribute("d", "M2 2L8 8M8 2L2 8");
+    path.setAttribute("stroke", "currentColor");
+    path.setAttribute("stroke-width", "2.17");
+    path.setAttribute("stroke-linecap", "round");
+
+    tagBtnIcon.appendChild(path);
     tagCloseBtn.appendChild(tagBtnIcon);
     tagBox.appendChild(tagCloseBtn);
 
