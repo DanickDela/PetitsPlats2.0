@@ -5,15 +5,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="assets/favicon.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Manrope:wght@200..800&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Mynerve&family=Roboto:ital,wght@0,100..900;1,100..900&family=Shrikhand&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;700&display=swap" el="stylesheet">
        <title>Petits plats 2.0</title>
     </head>
     <body class="w-[1440px] bg-white mx-auto  m-0 p-0">
-        <header class="pp-header flex flex-col w-full h-[667px] bg-[url('../assets/lampos-aritonang.png')] bg-cover bg-center">
-
+        <header class="pp-header flex flex-col w-full h-[667px] bg-[url('../assets/lampos-aritonang.jpg')] bg-cover bg-center">
             <img class="pp-header__logo ml-[69px] mt-[51px] w-[207px] h-[25.26px]" src="./assets/Logo.svg" alt="Logo Petits Plats" >
 
             <div class="pp-header__content flex flex-col items-center gap-[29.42px] mt-[168.74px]">
@@ -44,12 +42,12 @@
                             id="btn-search"
                             >
                             <svg 
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="28" height="28" stroke="white" stroke-width="1"
-                            class="w-[27px] h-7 transition-colors duration-300 group-hover:stroke-black"
-                            viewBox="0 0 28 28" fill="none" >
-                            <circle cx="10" cy="10" r="9.5"/>
-                            <line x1="18.3536" y1="18.6464" x2="27.3536" y2="27.6464"/>
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="28" height="28" stroke="white" stroke-width="1"
+                                class="w-[27px] h-7 transition-colors duration-300 group-hover:stroke-black"
+                                viewBox="0 0 28 28" fill="none" >
+                                <circle cx="10" cy="10" r="9.5"/>
+                                <line x1="18.35" y1="18.65" x2="27.35" y2="27.65"/>
                             </svg>
                         </button>
                     </div>
@@ -78,8 +76,37 @@
                             for="inputingredient">Ingrédients</label>
                     <button class="fingredient__header-btn w-[13px] h-full flex items-center justify-center bg-white relative" 
                         id="IngdropdownBtn" aria-label="Déplier le menu de tri" aria-expanded="false">
-                        <i class="fa-solid fa-chevron-down absolute text-black"></i>
-                        <i class="fa-solid fa-chevron-up  absolute text-black opacity-0"></i>
+                        <!-- Chevron down ans chevron up en svg pour éviter les requêtes -->
+                           <!-- Chevron down-->
+                         <svg
+                                class="fa-chevron-down absolute w-[13px] h-1.5 text-black"
+                                viewBox="0 0 13 6"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                >
+                                <path
+                                    d="M1 1L6.5 5L12 1"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                        </svg>
+                        <!-- Chevron Up -->
+                        <svg
+                            class="fa-chevron-up absolute w-[13px] h-1.5 text-black opacity-0"
+                            viewBox="0 0 13 6"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                            d="M1 5L6.5 1L12 5"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            />
+                        </svg>
                     </button>
                 </div>
                 <!-- Ccontenu de la combobox -->
@@ -102,7 +129,7 @@
                                     class="w-[13.5px] h-3.5"
                                     viewBox="0 0 28 28" fill="none" >
                                     <circle cx="10" cy="10" r="9.5"/>
-                                    <line x1="18.3536" y1="18.6464" x2="27.3536" y2="27.6464"/>
+                                    <line x1="18.35" y1="18.65" x2="27.35" y2="27.65"/>
                                 </svg>
                             </button>
                         </div>
@@ -126,8 +153,37 @@
                             for="inputappareil">Appareils</label>
                     <button class="fappareil__header-btn w-[13px] h-full flex items-center justify-center bg-white relative" 
                         id="AppdropdownBtn" aria-label="Déplier le menu de tri" aria-expanded="false">
-                        <i class="fa-solid fa-chevron-down absolute text-black"></i>
-                        <i class="fa-solid fa-chevron-up  absolute text-black opacity-0"></i>
+                        <!-- Chevron down ans chevron up en svg pour éviter les requêtes -->
+                           <!-- Chevron down-->
+                         <svg
+                                class="fa-chevron-down absolute w-[13px] h-1.5 text-black"
+                                viewBox="0 0 13 6"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                >
+                                <path
+                                    d="M1 1L6.5 5L12 1"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                        </svg>
+                        <!-- Chevron Up -->
+                        <svg
+                            class="fa-chevron-up absolute w-[13px] h-1.5 text-black opacity-0"
+                            viewBox="0 0 13 6"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                            d="M1 5L6.5 1L12 5"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            />
+                        </svg>
                     </button>
                 </div>
 
@@ -151,7 +207,7 @@
                                     class="w-[13.5px] h-3.5"
                                     viewBox="0 0 28 28" fill="none" >
                                     <circle cx="10" cy="10" r="9.5"/>
-                                    <line x1="18.3536" y1="18.6464" x2="27.3536" y2="27.6464"/>
+                                    <line x1="18.35" y1="18.65" x2="27.35" y2="27.65"/>
                                 </svg>
                             </button>
                         </div>
@@ -172,8 +228,37 @@
                             for="inputustensile">Ustensiles</label>
                     <button class="fustensile__header-btn w-[13px] h-full flex items-center justify-center bg-white relative" 
                         id="UstdropdownBtn" aria-label="Déplier le menu de tri" aria-expanded="false">
-                        <i class="fa-solid fa-chevron-down absolute text-black"></i>
-                        <i class="fa-solid fa-chevron-up  absolute text-black opacity-0"></i>
+                         <!-- Chevron down ans chevron up en svg pour éviter les requêtes -->
+                           <!-- Chevron down-->
+                         <svg
+                                class="fa-chevron-down absolute w-[13px] h-1.5 text-black"
+                                viewBox="0 0 13 6"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                >
+                                <path
+                                    d="M1 1L6.5 5L12 1"
+                                    stroke="currentColor"
+                                    stroke-width="1"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                />
+                        </svg>
+                        <!-- Chevron Up -->
+                        <svg
+                            class="fa-chevron-up absolute w-[13px] h-1.5 text-black opacity-0"
+                            viewBox="0 0 13 6"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                            d="M1 5L6.5 1L12 5"
+                            stroke="currentColor"
+                            stroke-width="1"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            />
+                        </svg>
                     </button>
                 </div>
 
@@ -197,7 +282,7 @@
                                     class="w-[13.5px] h-3.5"
                                     viewBox="0 0 28 28" fill="none" >
                                     <circle cx="10" cy="10" r="9.5"/>
-                                    <line x1="18.3536" y1="18.6464" x2="27.3536" y2="27.6464"/>
+                                    <line x1="18.35" y1="18.65" x2="27.3536" y2="27.65"/>
                                 </svg>
                             </button>
                         </div>

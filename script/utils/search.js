@@ -1,4 +1,4 @@
-import { StateRecipes, UpdateRecipes, hideError, displayError} from "./services.js";
+import { StateRecipes, UpdateRecipes, hideError, displayError, normaliseText} from "./services.js";
 /**
  * Initialise la recherche principale (barre de recherche du header).
  *
@@ -29,7 +29,7 @@ export const mainsearch= () => {
     // Masquer l'erreur dès qu'on tape + de 2 caractères
     inputsearch.addEventListener("input", () => {
         if (inputsearch.value.trim() === "") {
-             StateRecipes.searchvalue=inputsearch.value;
+             StateRecipes.searchvalue=normaliseText(inputsearch.value);
              UpdateRecipes ();
         }
         if (inputsearch.value.length>2) {
@@ -41,7 +41,7 @@ export const mainsearch= () => {
         const value = inputsearch.value;
         event.preventDefault();
 
-        StateRecipes.searchvalue=inputsearch.value;
+        StateRecipes.searchvalue=normaliseText(inputsearch.value);
 
         if (value.trim().length < 3) { 
             displayError(".formData", "Veuillez entrer au minimum 3 caractères pour la recherche");

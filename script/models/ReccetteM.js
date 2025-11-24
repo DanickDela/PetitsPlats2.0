@@ -66,7 +66,7 @@ export class RecipeInfo {
      */
     get imageUrl() {
         if (!this._image) return "";
-        return `./assets/json-recipes/${this._image}`;
+        return `./assets/recipes/${this._image}`;
     }
 
     /**
