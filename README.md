@@ -12,7 +12,6 @@ Objectif : développer un moteur de recherche performant, sans framework, basé 
 - Recherche plein texte dès **3 caractères**
 - Normalisation : minuscules, accents retirés…
 - Résultats instantanés
-- Moteur basé sur un **index optimisé**
 
 ---
 
@@ -30,28 +29,9 @@ Objectif : développer un moteur de recherche performant, sans framework, basé 
 - Ouverture/fermeture animée
 - Liste filtrée en temps réel
 
-# 🧠 Moteur de recherche — fonctionnement interne
-
-## 1️⃣ Construction d’un index optimisé
-
-À l’initialisation :
-
-- nom + description + ingrédients  
-➡ Concaténés dans `fullTextRecipe`  
-➡ Normalisés dans `textRecherche`  
-➡ Stockés dans `StateRecipes.TableauIndex`
-
-## 2️⃣ Algorithme de recherche principal
-
-- Si < 3 caractères → erreur  
-- Sinon → recherche dans l’index  
-- Application des filtres actifs
-
----
-
 # ✨ Hébergememnt
 
-Le site est hégergé sur [Github Pages]([url](https://danickdela.github.io/PetitsPlats2.0/))
+Le site est hébergé sur [[Github Pages]((https://danickdela.github.io/PetitsPlats2.0/)
 
 
 # ⚙️ Installation
