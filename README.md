@@ -29,7 +29,7 @@ Objectif : développer un moteur de recherche performant, sans framework, basé 
 - Ouverture/fermeture animée
 - Liste filtrée en temps réel
 
-# ✨ Hébergememnt
+# ✨ Hébergement
 
 Le site est hébergé sur [[Github Pages]((https://danickdela.github.io/PetitsPlats2.0/)
 
