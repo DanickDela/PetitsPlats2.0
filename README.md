@@ -3,6 +3,7 @@
 Projet réalisé dans le cadre de la formation *Développeur javascript React OpenClassrooms*.  
 Objectif : développer un moteur de recherche performant, sans framework, basé sur un index optimisé et des filtres dynamiques.
 
+![Aperçu du site](./assets/Home-page.png)
 
 # ✨ Fonctionnalités principales
 
