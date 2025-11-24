@@ -65,7 +65,7 @@ export function normaliseText(text) {
     return text
         .toString()
         .toLowerCase()
-        .replace(/<[^>]*>/g, "")  //suprime les balises html
+        .replace(/<[^>]*>/g, "")        //suprime les balises html
         .normalize("NFD")               // décompose les  accents
         .replace(/[\u0300-\u036f]/g, "") // supprimeles accents
         .replace(/\s+/g, " ")            // multiples espaces à 1

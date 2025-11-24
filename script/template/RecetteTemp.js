@@ -24,13 +24,15 @@ export function DefineRecipeTemplate (recipe) {
     const recipeImage= document.createElement('img');
     recipeImage.src= recipe.imageUrl;
     recipeImage.alt= recipe.name;
+    recipeImage.loading="lazy";
     recipeImage.classList.add(
                                 "recipe-card__image",
                                 "w-full",
                                 "h-[253px]",
                                 "object-cover",
-                                "rounded-t-[21px]"
+                                "rounded-t-[21px]",
                                 );
+
     recipeCard.appendChild (recipeImage);
 
     // Badge temps 
