@@ -49,6 +49,11 @@ Objectif : développer un moteur de recherche performant, sans framework, basé 
 
 ---
 
+# ✨ Hébergememnt
+
+Le site est hégergé sur [[Github Pages](url)]([url](https://danickdela.github.io/PetitsPlats2.0/))
+
+
 # ⚙️ Installation
 
 ## 1. Cloner le projet
